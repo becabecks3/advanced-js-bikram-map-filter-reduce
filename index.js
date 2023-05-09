@@ -1,1 +1,192 @@
 //RESUELVE LOS EJERCICIOS AQUI
+
+
+// Ejercicio 1
+let numbers = [4, 5, 6, 7, 8, 9, 10];
+const elevados = arr => {
+   return numbers.map(function(element){
+        return element ** element ;
+    });
+
+};
+
+// Ejercicio 2
+
+const foodList = ['Pizza', 'Ramen', 'Paella', 'Entrecot'];
+
+const result2 = foodList.map((value) => {
+
+    if(value == 'Pizza') {
+        return 'Como soy de Italia, amo comer Pizza';
+    }
+
+    if(value == 'Ramen') {
+        return 'Como soy de Japón, amo comer Ramen';
+    }
+
+    if(value == 'Paella') {
+        return 'Como soy de Valencia, amo comer Paella';
+    }
+
+    if(value == 'Entrecot') {
+        return 'Aunque no como carne, el Entrecot es sabroso';
+    }
+})
+
+
+// Ejercicio 3
+let numbers2 = [1,2,3,4,5,6,7,8,9,10];
+const result4 = num => {
+    return numbers2.filter(num => num % 2);
+}
+console.log(result4(numbers2));
+
+// Ejercicio 4
+
+const foodList2 =[
+    {
+      name: 'Tempeh',
+      isVeggie: true
+    },
+    {
+      name: 'Cheesbacon burguer',
+      isVeggie: false
+    },
+    {
+      name: 'Tofu burguer',
+      isVeggie: true
+    },
+    {
+      name: 'Entrecot',
+      isVeggie: false
+    }];
+
+    const result5 = foodList2
+                            .filter(val => val.isVeggie)
+                            .map(elem => {
+           if(elem.name.includes('burguer')){
+            return `Que rica ${elem.name} me voy a comer!`
+           } else {
+            return `Que rico ${elem.name} me voy a comer!`
+           }                    
+                            });
+
+
+const staff = [
+    {
+      name: 'Pepe',
+      role: 'The Boss',
+      hobbies: ['leer', 'ver pelis']
+    },
+    {
+      name: 'Ana',
+      role: 'becaria',
+      hobbies: ['nadar', 'bailar']
+    },
+    {
+      name: 'Luis',
+      role: 'programador',
+      hobbies: ['dormir', 'comprar']
+    },
+    {
+      name: 'Carlos',
+      role: 'secretario',
+      hobbies: ['futbol', 'queso']
+    }
+  ];
+
+  const result3 = staff.map(item => {
+    const staffDescription = [];
+
+    staffDescription.push(`${item.name} es ${item.role} y le gusta ${item.hobbies.join(" y ")}`);
+
+    return staffDescription.toString();
+  })
+
+  console.log(result3);
+
+
+// Ejercicio 5
+
+const inventory = [
+    {
+      name: 'Mobile phone',
+      price: 199
+    },
+    {
+      name: 'TV Samsung',
+      price: 459
+    },
+    {
+      name: 'Viaje a Cancún',
+      price: 600
+    },
+    {
+      name: 'Mascarilla',
+      price: 1
+    }
+  ];
+
+const result6 =  inventory
+                    .filter(item => item.price > 300)
+                    .map(elem => elem.name);
+
+
+//Ejercicio 6
+
+const numeros3 = [39, 2, 4, 25, 62];
+
+const result7 = numeros3.reduce((prev, curr) => prev * curr);
+
+
+//Ejericio 7
+
+const sentenceElements = [
+    'Me',
+    'llamo',
+    'Rebeca',
+    'y',
+    'quiero',
+    'sentir',
+    'la', 
+    'fuerza',
+    'con',
+    'javascript'
+  ];
+
+  const result8 =  sentenceElements.reduce((acc, currVal) => `${acc} ${currVal}`)
+
+ 
+
+// Ejercicio 8
+const books = [
+    {
+      name: ' JS for dummies',
+      author: 'Emily A. Vander Veer',
+      price: 20,
+      category: 'code'
+    },
+    {
+      name: 'Don Quijote de la Mancha',
+      author: 'Cervantes',
+      price: 14,
+      category: 'novel'
+    },
+    {
+      name: 'Juego de tronos',
+      author: 'George R. Martin',
+      price: 32,
+      category: 'Fantasy'
+    },
+    {
+      name: 'javascript the good parts',
+      author: 'Douglas Crockford',
+      price: 40,
+      category: 'code'
+    }
+  ];
+
+const result9 = books
+                    .filter(items => items.category == 'code')
+                    .map(items => items.price)
+                    .reduce((acc, currVal) => acc += currVal)
